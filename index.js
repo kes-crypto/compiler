@@ -22,7 +22,7 @@ app.post('/compilecode' , function (req , res ) {
     {
         if(inputRadio === "true")
         {
-        	var envData = { OS : "linux" , cmd : "gcc"};
+        	var envData = { OS : "windows" , cmd : "gcc"};
         	compiler.compileCPPWithInput(envData , code ,input , function (data) {
         		if(data.error)
         		{
@@ -37,7 +37,7 @@ app.post('/compilecode' , function (req , res ) {
 	   else
 	   {
 
-	   	var envData = { OS : "linux" , cmd : "gcc"};
+	   	var envData = { OS : "windows" , cmd : "gcc"};
         	compiler.compileCPP(envData , code , function (data) {
         	if(data.error)
         	{
@@ -55,14 +55,14 @@ app.post('/compilecode' , function (req , res ) {
     {
         if(inputRadio === "true")
         {
-            var envData = { OS : "linux"};
+            var envData = { OS : "windows"};
             compiler.compilePythonWithInput(envData , code , input , function(data){
                 res.send(data);
             });
         }
         else
         {
-            var envData = { OS : "linux"};
+            var envData = { OS : "windows"};
             compiler.compilePython(envData , code , function(data){
                 res.send(data);
             });
